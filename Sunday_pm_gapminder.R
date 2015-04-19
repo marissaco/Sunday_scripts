@@ -44,3 +44,23 @@ library("tidyr")
 # Turn iris dataset from wide into long format
 iris.long <- gather(iris, "Measurement", "Value", 1:4)
 
+help(plot)
+
+# Scratch for final exercise
+gap.in %>%
+  filter(country == "Djibouti") %>%
+  select(year, gdpPercap) %>%
+  plot("year","gdpPercap",
+       main="Djibouti")
+
+gap.in %>%
+  filter(country == "Philippines") %>%
+  select(year, gdpPercap) %>%
+  plot("year","gdpPercap",
+       main="Philippines")
+
+gap.in %>%
+  filter(country == "United States") %>%
+  select(year, gdpPercap) %>%
+  plot("year","gdpPercap",
+       main="United States")
