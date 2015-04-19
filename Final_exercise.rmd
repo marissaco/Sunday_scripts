@@ -49,4 +49,5 @@ gap.in %>%
 
 ```
 
-####
+####Make 2 histograms of global life expectancy. One with the default bin widths and one with narrower bin widths. Explain the differences and any interesting trends in markdown text.
+
