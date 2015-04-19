@@ -3,6 +3,12 @@
 # marissasco@gmail.com
 # 2015-04-19
 
+# Run once per computer to install
+install.packages("dplyr", dependencies = TRUE)
+
+# Run every time you want to use this package
+library("dplyr")
+
 # Read in data as tab-delimited
 gap.in <- read.table("output/combined_gapMinder.tsv", 
                      sep = "\t", 
@@ -16,6 +22,7 @@ for (row.number in 1:10){
 
 gap.in[1:10,1:5]
 
+# Functions
 add.me <- function(x, y){
   (x + y) * 8
 }
