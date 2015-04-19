@@ -5,7 +5,7 @@ date: "Sunday, April 19, 2015"
 output: html_document
 ---
 
-Take a look at the file that resulted from our scripts this morning (which should be in the output folder) and pick three countries you are interested in. Write an Rmd script to load the data file, select all the data for that country, and make three scatter plots (one for each country) that have year on the x-axis and GDP on the y axis. Make sure you load all the libraries you might need (dplyr, etc). Describe any trends you see for each country using markdown text.
+####Take a look at the file that resulted from our scripts this morning (which should be in the output folder) and pick three countries you are interested in. Write an Rmd script to load the data file, select all the data for that country, and make three scatter plots (one for each country) that have year on the x-axis and GDP on the y axis. Make sure you load all the libraries you might need (dplyr, etc). Describe any trends you see for each country using markdown text.
 
 ```{r, echo=FALSE, message=FALSE}
 library("dplyr")
@@ -32,4 +32,21 @@ gap.in %>%
        main="United States")
 ```
 
+Djibouti was doing alright until the '90s when GDP took a dive. The Philippines' GDP has been steadily increasing since the '50s. The United States' GDP is ten times higher than those of the other two countries and has been since the '50s as well.
 
+####Calculate the mean, min, and max life expectancies for each continent. Describe what you see in the results using a markdown text.
+
+```{r, echo=FALSE, message=FALSE}
+library("dplyr")
+gap.in <- read.table("output/combined_gapMinder.tsv", 
+                     sep = "\t", 
+                     header = TRUE)
+                     
+gap.in %>%
+  select(continent,lifeExp) %>%
+  group_by(continent) %>%
+  summarize(mean=mean(lifeExp),min=min(lifeExp),max=max(lifeExp))
+
+```
+
+####
