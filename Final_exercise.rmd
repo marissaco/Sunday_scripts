@@ -1,0 +1,35 @@
+---
+title: "Final Exercise"
+author: "Marissa Co"
+date: "Sunday, April 19, 2015"
+output: html_document
+---
+
+Take a look at the file that resulted from our scripts this morning (which should be in the output folder) and pick three countries you are interested in. Write an Rmd script to load the data file, select all the data for that country, and make three scatter plots (one for each country) that have year on the x-axis and GDP on the y axis. Make sure you load all the libraries you might need (dplyr, etc). Describe any trends you see for each country using markdown text.
+
+```{r, echo=FALSE, message=FALSE}
+library("dplyr")
+gap.in <- read.table("output/combined_gapMinder.tsv", 
+                     sep = "\t", 
+                     header = TRUE)
+                     
+gap.in %>%
+  filter(country == "Djibouti") %>%
+  select(year, gdpPercap) %>%
+  plot("year","gdpPercap",
+       main="Djibouti")
+       
+gap.in %>%
+  filter(country == "Philippines") %>%
+  select(year, gdpPercap) %>%
+  plot("year","gdpPercap",
+       main="Philippines")
+       
+gap.in %>%
+  filter(country == "United States") %>%
+  select(year, gdpPercap) %>%
+  plot("year","gdpPercap",
+       main="United States")
+```
+
+
